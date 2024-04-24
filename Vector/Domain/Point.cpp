@@ -1,31 +1,22 @@
+#include <iostream>
 #include "Point.h"
+#include "cmath"
 
 Point::Point::Point(const double abscissa, const double ordinate, const double applicate)
 {
+	x = abscissa;
+	y = ordinate;
+	z = applicate;
 }
 
 bool Point::Point::operator==(const Point& point) const
 {
-	return(this->x == point.x && this->y == point.y && this->z == point.z);
+	return(std::abs(this->x - point.x)<= std::numeric_limits<double>::epsilon() && std::abs(this->y - point.y) <= std::numeric_limits<double>::epsilon()&& std::abs(this->z - point.z) <= std::numeric_limits<double>::epsilon());
 }
 
 bool Point::Point::operator!=(const Point& point) const
 {
 	return !(*this == point);
-}
-
-void Point::Point::operator+(double vesh)
-{
-	this->x += vesh;
-	this->y += vesh;
-	this->z += vesh;
-}
-
-void Point::Point::operator+(double vesh)
-{
-	this->x -= vesh;
-	this->y -= vesh;
-	this->z -= vesh;
 }
 
 std::ostream& Point::operator<<(std::ostream& output, const Point& point)
