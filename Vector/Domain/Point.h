@@ -3,7 +3,7 @@
 
 namespace Point
 {
-	class Point
+	struct Point
 	{
 	private:
 		/**
