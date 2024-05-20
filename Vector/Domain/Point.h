@@ -5,7 +5,6 @@ namespace Point
 {
 	struct Point
 	{
-	private:
 		/**
 		*@breaf Абсцисса точки.
 		*/
@@ -19,7 +18,6 @@ namespace Point
 		*/
 		double z = 0;
 
-	public:
 		/**
 		*@breaf Создает экземляр класса Point.
 		*@param Абсцисса точки.
