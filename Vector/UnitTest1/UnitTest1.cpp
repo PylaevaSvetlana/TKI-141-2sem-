@@ -32,6 +32,14 @@ namespace Test
 			Vector::Vector first(a, b), second(a, b);
 			Assert::IsTrue(first == second);
 		}
+		TEST_METHOD(Vector_OperatorNotEqual)
+		{
+			Point::Point a(0, 0, 0), b(2, 3, -14);
+			Vector::Vector first(a, b);
+			Point::Point c(4, 3, 5), d(3, 5, 8);
+			Vector::Vector second(c, d);
+			Assert::IsTrue(first != second);
+		}
 		TEST_METHOD(Vector_OperatorSum)
 		{
 			Point::Point a(0, 0, 0), b(2, 3, -14);
