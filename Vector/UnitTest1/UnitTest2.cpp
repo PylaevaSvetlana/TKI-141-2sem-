@@ -20,21 +20,19 @@ namespace Test
 		}
 		TEST_METHOD(OperatorEqual_NotEqualData_False)
 		{
-			Point::Point a(0, 0, 0), b(0, 0, 0);
-			Point::Point c(4, 3, 5), d(3, 5, 8);
+			Point::Point a(0, 0, 0), b(0, 0, 0),
+				         c(4, 3, 5), d(3, 5, 8);
 
-			Vector::Vector first(a, b);
-			Vector::Vector second(c, d);
+			Vector::Vector first(a, b), second(c, d);
 
 			Assert::IsFalse(first == second);
 		}
 		TEST_METHOD(OperatorNotEqual_NotEqualData_True)
 		{
-			Point::Point a(0, 0, 0), b(2, 3, -14);
-			Point::Point c(4, 3, 5), d(3, 5, 8);
+			Point::Point a(0, 0, 0), b(2, 3, -14),
+			             c(4, 3, 5), d(3, 5, 8);
 
-			Vector::Vector first(a, b);
-			Vector::Vector second(c, d);
+			Vector::Vector first(a, b), second(c, d);
 
 			Assert::IsTrue(first != second);
 		}
@@ -48,71 +46,61 @@ namespace Test
 		}
 		TEST_METHOD(OperatorSum_CorrectData_True)
 		{
-			Point::Point a(0, 0, 0), b(2, 3, -14);
-			Point::Point c(4, 3, 5), d(3, 5, 8);
-			Point::Point exp_s(0, 0, 0), exp_e(1, 5, -11);
+			Point::Point a(0, 0, 0), b(2, 3, -14),
+			             c(4, 3, 5), d(3, 5, 8),
+			             exp_s(0, 0, 0), exp_e(1, 5, -11);
 
-			Vector::Vector first(a, b);
-			Vector::Vector second(c, d);
-			Vector::Vector expected_vector(exp_s, exp_e);
+			Vector::Vector first(a, b), second(c, d), expected_vector(exp_s, exp_e);
 
 			Assert::IsTrue(first + second == expected_vector);
 		}
 		TEST_METHOD(OperatorSum_NotCorrectData_False)
 		{
-			Point::Point a(0, 0, 0), b(2, 3, -14);
-			Point::Point c(4, 3, 5), d(3, 5, 8);
-			Point::Point exp_s(0, 0, 0), exp_e(7, 10, 3);
+			Point::Point a(0, 0, 0), b(2, 3, -14),
+				         c(4, 3, 5), d(3, 5, 8),
+			             exp_s(0, 0, 0), exp_e(7, 10, 3);
 
-			Vector::Vector first(a, b);
-			Vector::Vector second(c, d);
-			Vector::Vector expected_vector(exp_s, exp_e);
+			Vector::Vector first(a, b), second(c, d), expected_vector(exp_s, exp_e);
 
 			Assert::IsFalse(first + second == expected_vector);
 		}
 		TEST_METHOD(OperatorSubtraction_CorrectData_True)
 		{
-			Point::Point a(0, 0, 0), b(2, 3, -14);
-			Point::Point c(4, 3, 5), d(3, 5, 8);
-			Point::Point exp_s(0, 0, 0), exp_e(3, 1, -17);
+			Point::Point a(0, 0, 0), b(2, 3, -14),
+				         c(4, 3, 5), d(3, 5, 8),
+				         exp_s(0, 0, 0), exp_e(3, 1, -17);
 
-			Vector::Vector first(a, b);
-			Vector::Vector second(c, d);
-			Vector::Vector expected_vector(exp_s, exp_e);
+			Vector::Vector first(a, b), second(c, d), expected_vector(exp_s, exp_e);
 
 			Assert::IsTrue(first - second == expected_vector);
 		}
 		TEST_METHOD(OperatorSubtraction_NotCorrectData_False)
 		{
-			Point::Point a(0, 0, 0), b(2, 3, -14);
-			Point::Point c(4, 3, 5), d(3, 5, 8);
-			Point::Point exp_s(0, 0, 0), exp_e(7, 10, 3);
+			Point::Point a(0, 0, 0), b(2, 3, -14),
+				         c(4, 3, 5), d(3, 5, 8),
+				         exp_s(0, 0, 0), exp_e(7, 10, 3);
 
-			Vector::Vector first(a, b);
-			Vector::Vector second(c, d);
-			Vector::Vector expected_vector(exp_s, exp_e);
+			Vector::Vector first(a, b), second(c, d), expected_vector(exp_s, exp_e);
 
 			Assert::IsFalse(first - second == expected_vector);
 		}
 		TEST_METHOD(OperatorMultipliedToScalar_Data_True)
 		{
 			double v = -1.24;
-			Point::Point a(0, 0, 0), b(2, 3, -14);
-			Point::Point exp_s(0, 0, 0), exp_e(2 * v, 3 * v, -14 * v);
+			Point::Point a(0, 0, 0), b(2, 3, -14),
+				         exp_s(0, 0, 0), exp_e(2 * v, 3 * v, -14 * v);
 
-			Vector::Vector first(a, b);
-			Vector::Vector expected_vector(exp_s, exp_e);
+			Vector::Vector first(a, b), expected_vector(exp_s, exp_e);
 
 			Assert::IsTrue(first * v == expected_vector);
 		}
 		TEST_METHOD(OperatorMultipliedToScalar_NotCorrectData_False)
 		{
 			double v = -1.24;
-			Point::Point a(0, 0, 0), b(2, 3, -14);
-			Point::Point exp_s(0, 0, 0), exp_e(7 * v, 10 * v, 3 * v);
+			Point::Point a(0, 0, 0), b(2, 3, -14), 
+				         exp_s(0, 0, 0), exp_e(7 * v, 10 * v, 3 * v);
 
-			Vector::Vector first(a, b);
-			Vector::Vector expected_vector(exp_s, exp_e);
+			Vector::Vector first(a, b), expected_vector(exp_s, exp_e);
 
 			Assert::IsFalse(first * v == expected_vector);
 		}
